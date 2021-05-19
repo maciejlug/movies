@@ -70,7 +70,6 @@ function Item() {
               <span>Plot: </span>
               {Plot}
             </p>
-            {console.log(Poster === "N/A")}
           </div>
         </div>
       </section>
