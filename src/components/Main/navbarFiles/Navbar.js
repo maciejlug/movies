@@ -9,6 +9,7 @@ function Navbar({
   searchText,
   focusSearch,
   setFocusSearch,
+  setSearchState,
 }) {
   return (
     <nav>
@@ -25,7 +26,9 @@ function Navbar({
           onBlur={() => setFocusSearch(false)}
           onFocus={() => setFocusSearch(true)}
         />
-        {searchText && focusSearch && <Listbox searchText={searchText} />}
+        {searchText && focusSearch && (
+          <Listbox searchText={searchText} setSearchState={setSearchState} />
+        )}
         <button
           className="search-icon"
           type="submit"

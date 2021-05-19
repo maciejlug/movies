@@ -11,7 +11,7 @@ function MobileSearch({
 }) {
   return (
     <>
-      <form className="mobile-search-form" action="#" autoFocus>
+      <form className="mobile-search-form" action="#">
         <input
           className="search-data-mobile"
           placeholder="Search"

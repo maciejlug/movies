@@ -3,15 +3,17 @@ import Default from "./default.jpg";
 import { Link } from "react-router-dom";
 import { Context } from "../context";
 
-function ListboxItem({ props, setSearchState }) {
+function ListboxItem({ props }) {
   const { Title, Poster, Year, Type, imdbID } = props;
-  const { setSearchText } = React.useContext(Context);
+  const { setSearchText, size, setSearchState } = React.useContext(Context);
   return (
     <Link
       to={`/${imdbID}`}
       onClick={() => {
-        setSearchState(false);
         setSearchText("");
+        if (size <= 1092) {
+          setSearchState(false);
+        }
       }}
       onMouseDown={(event) => event.preventDefault()}
     >

@@ -1,11 +1,10 @@
 import React, { useState } from "react";
 import Navbar from "./navbarFiles/Navbar";
 import MobileNavbar from "./navbarFiles/MobileNavbar";
-
+import { Context } from "../Main/context";
 function NavbarSecond({ size, handleSumbit, setSearchText, searchText }) {
-  const [searchState, setSearchState] = useState(false);
   const [focusSearch, setFocusSearch] = useState(false);
-
+  const { searchState, setSearchState } = React.useContext(Context);
   return (
     <>
       {size > 792 && (

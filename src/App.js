@@ -12,6 +12,7 @@ function App() {
   const [searchText, setSearchText] = useState("");
   const [searchId, setSearchId] = useState("");
   const [isLoading, setIsLoading] = useState(true);
+  const [searchState, setSearchState] = useState(false);
 
   const handleSumbit = (e) => {
     e.preventDefault();
@@ -84,6 +85,8 @@ function App() {
           movie,
           isLoading,
           setIsLoading,
+          setSearchState,
+          searchState,
         }}
       >
         <Navbar
