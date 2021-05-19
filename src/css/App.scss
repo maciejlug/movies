@@ -1,0 +1,13 @@
+@import "./Navbar";
+@import "./Content";
+@import "./Slider-top";
+@import "./Listbox";
+* {
+  margin: 0;
+  padding: 0%;
+  outline: none;
+  box-sizing: border-box;
+}
+body {
+  background: #f2f2f2;
+}

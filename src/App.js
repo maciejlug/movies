@@ -1,24 +1,114 @@
-import logo from './logo.svg';
-import './App.css';
-
+import "./css/App.scss";
+import Navbar from "./components/Main/NavbarComponent";
+import Home from "./components/Main/Home";
+import React, { useState, useEffect } from "react";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import Movies from "./components/Main/Movies";
+import Series from "./components/Main/Series";
+import MovieItem from "./components/Main/MovieFiles/MovieItem";
+import { Context } from "./components/Main/context";
+export const API_ENDPOINT = `https://www.omdbapi.com/?apikey=${process.env.REACT_APP_MOVIES_API_KEY}`;
 function App() {
+  const [searchText, setSearchText] = useState("");
+  const [searchId, setSearchId] = useState("");
+  const [isLoading, setIsLoading] = useState(true);
+
+  const handleSumbit = (e) => {
+    e.preventDefault();
+  };
+
+  const [size, setSize] = useState(window.innerWidth);
+
+  const checkSize = () => {
+    setSize(window.innerWidth);
+  };
+  useEffect(() => {
+    window.addEventListener("resize", checkSize);
+
+    return () => {
+      window.removeEventListener("resize", checkSize);
+    };
+  });
+
+  const [movies, setMovies] = useState();
+
+  const fetchMovies = async (url) => {
+    try {
+      const response = await fetch(url);
+      const data = await response.json();
+
+      if (data.Response === "True") {
+        setMovies(data.Search);
+      } else {
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  useEffect(() => {
+    fetchMovies(`${API_ENDPOINT}&s=${searchText}`);
+  }, [searchText]);
+
+  const [movie, setMovie] = useState();
+
+  const fetchMovie = async (url) => {
+    try {
+      const response = await fetch(url);
+      const data = await response.json();
+
+      if (data.Response === "True") {
+        setMovie(data);
+        setIsLoading(false);
+      } else {
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  useEffect(() => {
+    fetchMovie(`${API_ENDPOINT}&i=${searchId}`);
+    setIsLoading(true);
+  }, [searchId]);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Context.Provider
+        value={{
+          size,
+          movies,
+          API_ENDPOINT,
+          setSearchText,
+          setSearchId,
+          movie,
+          isLoading,
+          setIsLoading,
+        }}
+      >
+        <Navbar
+          handleSumbit={handleSumbit}
+          setSearchText={setSearchText}
+          searchText={searchText}
+          size={size}
+        />
+        {console.log(searchId)}
+        <Switch>
+          <Route exact path="/movies">
+            <Movies />
+          </Route>
+          <Route exact path="/series">
+            <Series />
+          </Route>
+          <Route exact path="/">
+            <Home />
+          </Route>
+          <Route path="/:imdbID">
+            <MovieItem />
+          </Route>
+        </Switch>
+      </Context.Provider>
+    </Router>
   );
 }
 

@@ -1,0 +1,41 @@
+@import "./Palete";
+
+.listbox {
+  width: 100%;
+  top: 30px;
+  max-height: 400px;
+  position: absolute;
+  background: #fff;
+  border-radius: 2px;
+  left: 0px;
+  overflow: scroll;
+  overflow-x: hidden;
+  a {
+    color: inherit;
+    text-decoration: inherit;
+  }
+}
+.listbox-item {
+  display: flex;
+  padding: 5px;
+
+  &:hover {
+    background: $hover;
+    cursor: pointer;
+  }
+
+  .listbox-item-info {
+    padding: 10px;
+  }
+  img {
+    width: 20%;
+  }
+}
+@media (max-width: 992px) {
+}
+@media (max-width: 792px) {
+  .listbox {
+    top: 60px;
+    color: $black;
+  }
+}
