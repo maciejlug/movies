@@ -95,7 +95,7 @@ function App() {
           searchText={searchText}
           size={size}
         />
-        {console.log(searchId)}
+
         <Switch>
           <Route exact path="/movies">
             <Movies />
