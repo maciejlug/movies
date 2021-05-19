@@ -30,7 +30,6 @@ function Item() {
 
   return (
     <main className="movieItem">
-      {console.log(movie)}
       <section className="content">
         <div className="movie-item">
           <img src={Poster === "N/A" ? Default : Poster} alt={Title} />
