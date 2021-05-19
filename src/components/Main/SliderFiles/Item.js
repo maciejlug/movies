@@ -15,8 +15,8 @@ function Item({ props, index, active }) {
       {props.map((item) => {
         const { imdbID, Poster } = item;
         return (
-          <Link to={`/${imdbID}`} key={imdbID} className="item">
-            <article>
+          <Link to={`/${imdbID}`} key={imdbID} className="item-link">
+            <article className="item">
               <img src={Poster} alt="" />
             </article>
           </Link>
