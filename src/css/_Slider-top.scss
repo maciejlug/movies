@@ -11,9 +11,12 @@ h2 span {
 }
 
 .item {
-  width: calc(100% / 6);
   height: 100%;
   padding: 0 1%;
+}
+
+.item-link {
+  max-width: calc(100% / 6);
 }
 
 .item img {
@@ -97,19 +100,19 @@ h2 span {
 }
 
 @media (max-width: 1092px) {
-  .item {
-    width: 25%;
-  }
   .slider-top-box {
-    height: 250px;
+    height: 300px;
+  }
+  .item-link {
+    max-width: 25%;
   }
 }
 
 @media (max-width: 792px) {
-  .item {
-    width: 50%;
+  .item-link {
+    max-width: 50%;
   }
   .slider-top-box {
-    height: 300px;
+    height: 250px;
   }
 }
