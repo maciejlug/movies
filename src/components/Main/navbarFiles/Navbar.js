@@ -22,7 +22,7 @@ function Navbar({
           required
           onChange={(e) => setSearchText(e.target.value)}
           value={searchText}
-          //onBlur={() => setFocusSearch(false)}
+          onBlur={() => setFocusSearch(false)}
           onFocus={() => setFocusSearch(true)}
         />
         {searchText && focusSearch && <Listbox searchText={searchText} />}

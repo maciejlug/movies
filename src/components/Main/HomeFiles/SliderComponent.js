@@ -28,14 +28,20 @@ function Slider() {
   };
 
   useEffect(() => {
-    if (size <= 792) {
+    if (size <= 542) {
       setToRender(2);
     }
-    if (size <= 1092 && size > 792) {
+    if (size > 542 && size <= 792) {
+      setToRender(3);
+    }
+    if (size > 792 && size <= 1092) {
       setToRender(4);
     }
 
-    if (size > 1092) {
+    if (size > 1092 && size <= 1492) {
+      setToRender(5);
+    }
+    if (size > 1492) {
       setToRender(6);
     }
   }, [size]);
@@ -59,6 +65,7 @@ function Slider() {
                 props={item}
                 index={index}
                 active={sliderIndex}
+                toRender={toRender}
               />
             ))}
         </div>

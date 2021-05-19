@@ -2,7 +2,7 @@ import React from "react";
 import ListboxItem from "./ListboxItem";
 import { Context } from "../context";
 
-function Listbox() {
+function Listbox({ setSearchState }) {
   const { movies } = React.useContext(Context);
 
   return (
@@ -11,7 +11,13 @@ function Listbox() {
       style={movies ? { display: "block" } : { display: "none" }}
     >
       {movies &&
-        movies.map((item) => <ListboxItem key={item.imdbID} props={item} />)}
+        movies.map((item) => (
+          <ListboxItem
+            key={item.imdbID}
+            props={item}
+            setSearchState={setSearchState}
+          />
+        ))}
     </div>
   );
 }

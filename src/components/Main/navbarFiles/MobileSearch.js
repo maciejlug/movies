@@ -20,7 +20,9 @@ function MobileSearch({
           onBlur={() => setFocusSearch(false)}
           onFocus={() => setFocusSearch(true)}
         />
-        {searchText && focusSearch && <Listbox searchText={searchText} />}
+        {searchText && focusSearch && (
+          <Listbox searchText={searchText} setSearchState={setSearchState} />
+        )}
 
         <button
           className="search-mobile"
