@@ -6,6 +6,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Movies from "./components/Main/Movies";
 import Series from "./components/Main/Series";
 import MovieItem from "./components/Main/MovieFiles/MovieItem";
+import Footer from "./components/Main/HomeFiles/Footer";
 import { Context } from "./components/Main/context";
 export const API_ENDPOINT = `https://www.omdbapi.com/?apikey=${process.env.REACT_APP_MOVIES_API_KEY}`;
 function App() {
@@ -111,6 +112,7 @@ function App() {
             <MovieItem />
           </Route>
         </Switch>
+        <Footer />
       </Context.Provider>
     </Router>
   );

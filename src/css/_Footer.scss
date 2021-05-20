@@ -1,0 +1,49 @@
+@import "./Palete";
+footer {
+  width: 100vw;
+  min-height: $footer-height;
+  background: $black;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  .links-container {
+    display: flex;
+    flex-direction: column;
+    ul {
+      display: flex;
+      justify-content: center;
+      li {
+        list-style: none;
+        padding: 30px 20px;
+        font-size: 20px;
+        a {
+          color: #fff;
+          &:hover {
+            color: $hover;
+          }
+        }
+      }
+    }
+  }
+  .icons-container {
+    display: flex;
+    justify-content: space-evenly;
+    a {
+      margin: 10px 20px;
+    }
+  }
+  .copyright {
+    font-size: 20px;
+    padding: 20px;
+    color: #fff;
+    .logo {
+      font-family: "Times New Roman", Times, serif;
+      letter-spacing: -1px;
+      font-size: 25px;
+    }
+  }
+}

@@ -2,12 +2,20 @@
 @import "./Content";
 @import "./Slider-top";
 @import "./Listbox";
+@import "./Footer";
 * {
   margin: 0;
   padding: 0%;
   outline: none;
   box-sizing: border-box;
+  text-decoration: none;
 }
 body {
   background: #f2f2f2;
+  position: relative;
+  #root {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
 }
