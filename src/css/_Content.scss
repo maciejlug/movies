@@ -1,5 +1,35 @@
 @import "./Palete";
 
+//loading
+.loading {
+  width: 100vw;
+  height: calc(100vh - #{$navbar-height});
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: $color4;
+}
+
+.loading-ring:after {
+  content: " ";
+  display: block;
+  width: 64px;
+  height: 64px;
+  margin: 8px;
+  border-radius: 50%;
+  border: 6px double;
+  border-color: $color2 $hover $color2 $hover;
+  animation: loading-ring 1.8s linear infinite;
+}
+@keyframes loading-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
 .image-top {
   height: 400px;
   img {

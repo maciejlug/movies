@@ -13,12 +13,13 @@ function App() {
   const [searchId, setSearchId] = useState("");
   const [isLoading, setIsLoading] = useState(true);
   const [searchState, setSearchState] = useState(false);
+  const [size, setSize] = useState(window.innerWidth);
+  const [movies, setMovies] = useState();
+  const [movie, setMovie] = useState();
 
   const handleSumbit = (e) => {
     e.preventDefault();
   };
-
-  const [size, setSize] = useState(window.innerWidth);
 
   const checkSize = () => {
     setSize(window.innerWidth);
@@ -31,7 +32,7 @@ function App() {
     };
   });
 
-  const [movies, setMovies] = useState();
+  //fetching multiple movies
 
   const fetchMovies = async (url) => {
     try {
@@ -51,7 +52,7 @@ function App() {
     fetchMovies(`${API_ENDPOINT}&s=${searchText}`);
   }, [searchText]);
 
-  const [movie, setMovie] = useState();
+  //fetching one movie
 
   const fetchMovie = async (url) => {
     try {

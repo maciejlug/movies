@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { Context } from "../context";
 import Default from "../navbarFiles/default.jpg";
+import LoadingPage from "../HomeFiles/LoadingPage";
 
 function Item() {
   const { setSearchId, movie, isLoading } = React.useContext(Context);
@@ -12,7 +13,7 @@ function Item() {
   }, [imdbID]);
 
   if (isLoading) {
-    return <div>loading</div>;
+    return <LoadingPage />;
   }
   const {
     Title,
