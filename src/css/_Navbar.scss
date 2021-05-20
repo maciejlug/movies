@@ -5,7 +5,7 @@ nav {
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
-  height: 60px;
+  height: $navbar-height;
   padding: 0 180px;
   position: sticky;
   top: 0;
@@ -16,6 +16,7 @@ nav {
     font-size: 30px;
     font-weight: 600;
     letter-spacing: -1px;
+    font-family: "Times New Roman", Times, serif;
   }
   .nav-items {
     display: flex;
@@ -144,7 +145,7 @@ nav {
 }
 @media (max-width: 992px) {
   nav {
-    padding: 0 50px;
+    padding: 0 40px;
   }
   nav.logo {
     flex: 2;
@@ -152,6 +153,9 @@ nav {
   }
 }
 @media (max-width: 792px) {
+  nav {
+    padding: 0 10px;
+  }
   nav .nav-mobile {
     justify-content: space-between;
     padding: 0 20px;

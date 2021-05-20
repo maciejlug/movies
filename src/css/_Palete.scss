@@ -1,6 +1,12 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 $hover: #f2668b;
-$color1: #dc30f2;
+$color1: #9c25ac;
 $color2: #741bf2;
 $color3: #4214a6;
 $color4: #181d26;
 $black: #0d0d0d;
+$navbar-height: 60px;
+
+* {
+  font-family: "Roboto", sans-serif;
+}

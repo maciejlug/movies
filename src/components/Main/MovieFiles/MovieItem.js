@@ -30,9 +30,12 @@ function Item() {
 
   return (
     <main className="movieItem">
-      <section className="content">
+      <section className="content-movie">
         <div className="movie-item">
-          <img src={Poster === "N/A" ? Default : Poster} alt={Title} />
+          <div className="movie-img">
+            <img src={Poster === "N/A" ? Default : Poster} alt={Title} />
+          </div>
+
           <div className="movie-info">
             <p className="title">{Title}</p>
             <p className="info">
