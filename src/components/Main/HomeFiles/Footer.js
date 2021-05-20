@@ -18,9 +18,6 @@ function Footer() {
           <li>
             <a href="#">Lorem</a>
           </li>
-          <li>
-            <a href="#">Lorem</a>
-          </li>
         </ul>
       </div>
       <IconContext.Provider value={{ color: "#fff", size: "30px" }}>
