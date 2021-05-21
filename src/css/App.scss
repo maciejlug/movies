@@ -13,9 +13,13 @@
 body {
   background: #f2f2f2;
   position: relative;
+  height: 100%;
+  width: 100%;
   #root {
-    min-height: 100vh;
     display: flex;
     flex-direction: column;
+    main {
+      min-height: calc(100vh - #{$navbar-height} - #{$footer-height});
+    }
   }
 }

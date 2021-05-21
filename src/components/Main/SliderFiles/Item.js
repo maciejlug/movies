@@ -21,7 +21,9 @@ function Item({ props, index, active, toRender }) {
             className="item"
             style={{ width: ` calc(100% / ${toRender})` }}
           >
-            <img src={Poster} alt="" />
+            <div className="slider-item-container">
+              <img src={Poster} alt="" />
+            </div>
           </Link>
         );
       })}

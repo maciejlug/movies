@@ -2,9 +2,9 @@ import React from "react";
 
 function Movies() {
   return (
-    <div>
+    <main>
       <h3>Movies</h3>
-    </div>
+    </main>
   );
 }
 

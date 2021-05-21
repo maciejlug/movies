@@ -76,45 +76,47 @@ function App() {
   }, [searchId]);
 
   return (
-    <Router>
-      <Context.Provider
-        value={{
-          size,
-          movies,
-          API_ENDPOINT,
-          setSearchText,
-          setSearchId,
-          movie,
-          isLoading,
-          setIsLoading,
-          setSearchState,
-          searchState,
-        }}
-      >
-        <Navbar
-          handleSumbit={handleSumbit}
-          setSearchText={setSearchText}
-          searchText={searchText}
-          size={size}
-        />
+    <>
+      <Router>
+        <Context.Provider
+          value={{
+            size,
+            movies,
+            API_ENDPOINT,
+            setSearchText,
+            setSearchId,
+            movie,
+            isLoading,
+            setIsLoading,
+            setSearchState,
+            searchState,
+          }}
+        >
+          <Navbar
+            handleSumbit={handleSumbit}
+            setSearchText={setSearchText}
+            searchText={searchText}
+            size={size}
+          />
 
-        <Switch>
-          <Route exact path="/movies">
-            <Movies />
-          </Route>
-          <Route exact path="/series">
-            <Series />
-          </Route>
-          <Route exact path="/">
-            <Home />
-          </Route>
-          <Route path="/:imdbID">
-            <MovieItem />
-          </Route>
-        </Switch>
-        <Footer />
-      </Context.Provider>
-    </Router>
+          <Switch>
+            <Route exact path="/movies">
+              <Movies />
+            </Route>
+            <Route exact path="/series">
+              <Series />
+            </Route>
+            <Route exact path="/">
+              <Home />
+            </Route>
+            <Route path="/:imdbID">
+              <MovieItem />
+            </Route>
+          </Switch>
+        </Context.Provider>
+      </Router>
+      <Footer />
+    </>
   );
 }
 

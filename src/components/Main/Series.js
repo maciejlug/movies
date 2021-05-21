@@ -2,9 +2,9 @@ import React from "react";
 
 function Series() {
   return (
-    <div>
+    <main>
       <h3>Series</h3>
-    </div>
+    </main>
   );
 }
 
